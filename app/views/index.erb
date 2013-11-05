@@ -1,0 +1,26 @@
+<head>
+  <style>
+    p {
+      font-size: 17px;
+    }
+    header {
+      font-weight: bold;
+      text-align: center;
+      font-size: 50px;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <% if current_user %>
+    <h2> Find your friends! </h2>
+      <% @all_users.each do |user| %>
+        <p><%= user.name %></p>
+      <% end %>
+  <% else !current_user %>
+    <header> Welcome! :)</header>
+  <% end %>
+  <%# TODO: 
+  1. If user is not signed in - display "Welcome".
+  2. If user is signed in then  display all users %>
+</div>
